@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+
+<launch>
+  <node name="rosbot_darknet_distance" pkg="rosbot_darknet_distance" type="calculating_distance.py" output="screen">
+  </node>
+</launch>
