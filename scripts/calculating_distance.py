@@ -47,17 +47,18 @@ class CalculatingDistance(object):
             rospy.loginfo("---------- For this Frame ---------- ")
             rospy.loginfo(" I recieved %s with probability %s ",i.Class,i.probability)
             rospy.loginfo(" xmin= %s, xmax= %s, ymin= %s, ymax = %s",i.xmin,i.xmax,i.ymin,i.ymax)
-            center = self.distance(i.xmax,i.xmin,i.ymax,i.ymin)
+            centeri = self.center(i.xmax,i.xmin,i.ymax,i.ymin)
             distancei = self.distance(i.xmax,i.xmin,i.ymax,i.ymin)
             anglei = self.angle(i.xmax,i.xmin,i.ymax,i.ymin)
             rospy.logwarn(anglei)
             self.distance_value.data = str(distancei)
             self.angle_value.data = str(anglei)
+            self.center_point.data = str(centeri)
             rospy.loginfo(" Calculating Distance -- %s in cm",self.distance_value.data)
             rospy.loginfo(" Calculating Angle -- %s in degres \n",self.angle_value.data)
             self.pub_distances.publish(self.distance_value.data)
             self.pub_angle.publish(self.angle_value.data)
-            self.pub_angle.publish(self.center.data)
+            self.pub_center_point.publish(self.center_point.data)
 
             
         
