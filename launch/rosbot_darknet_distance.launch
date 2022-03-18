@@ -3,5 +3,11 @@
 
 <launch>
   <node name="rosbot_darknet_distance" pkg="rosbot_darknet_distance" type="calculating_distance.py" output="screen">
+     <!-- Params RelaSense datasheats Field of View-->
+      <!-- <param name = "hfov"             type  = "double" value   = "91.2"                  />
+      <param name = "vfov"             type  = "double" value   = "91.2"                  />
+      <param name = "center_w"         type  = "double" value   = "91.2"                  />
+      <param name = "center_h"         type  = "double" value   = "91.2"                  /> -->
+
   </node>
 </launch>
